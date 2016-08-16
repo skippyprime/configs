@@ -77,7 +77,7 @@ TestDataItem = collections.namedtuple(
 
 @pytest.fixture(scope='session')
 def config_set(tmpdir_factory, request):
-    from configs import FileConfigSource, ObjectConfigSource
+    from figtree import FileConfigSource, ObjectConfigSource
 
     params = request.param
 
@@ -161,7 +161,7 @@ def _make_confs_unimplemented(hint):
 
 
 def _make_confs_xml(hint):
-    from configs import LiteralConfigSource
+    from figtree import LiteralConfigSource
 
     testdata_a = copy.deepcopy(TEST_DATA_FULL)
     testdata_a.pop('parent_b')
@@ -225,7 +225,7 @@ def _make_confs_xml(hint):
 
 
 def _make_confs_ini(hint):
-    from configs import LiteralConfigSource
+    from figtree import LiteralConfigSource
 
     testdata_a = copy.deepcopy(TEST_DATA_FULL)
     testdata_a.pop('parent_b')
@@ -253,7 +253,7 @@ def _make_confs_ini(hint):
 
 
 def _make_confs_yaml(hint):
-    from configs import LiteralConfigSource
+    from figtree import LiteralConfigSource
 
     testdata_a = copy.deepcopy(TEST_DATA_FULL)
     testdata_a.pop('parent_b')
@@ -281,7 +281,7 @@ def _make_confs_yaml(hint):
 
 
 def _make_confs_json(hint):
-    from configs import LiteralConfigSource
+    from figtree import LiteralConfigSource
 
     testdata_a = copy.deepcopy(TEST_DATA_FULL)
     testdata_a.pop('parent_b')

@@ -3,7 +3,7 @@ import re
 
 from setuptools import setup
 
-with open('configs/__init__.py', 'r') as fd:
+with open('figtree/__init__.py', 'r') as fd:
     VERSION = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
                         fd.read(), re.MULTILINE).group(1)
 
@@ -12,12 +12,18 @@ if os.path.isfile('requirements.txt'):
     with open('requirements.txt', 'r') as fd:
         REQUIREMENTS = fd.read().splitlines()
 
+EXTRA_KWARGS = {}
+if os.environ.get('FIGTREE_NO_LONG_DESCRIPTION', None) is None:
+    EXTRA_KWARGS['setup_requires'] = ['setuptools-markdown', ]
+    EXTRA_KWARGS['long_description_markdown_filename'] = 'README.md'
+else:
+    EXTRA_KWARGS['long_description'] = 'None'
+
 setup(
-    name='configs',
-    packages=['configs', ],
+    name='figtree',
+    packages=['figtree', ],
     version=VERSION,
     description='Multi-format configuration assembler',
-    long_description_markdown_filename='README.md',
     author='Geoff MacGill',
     author_email='skippydev007@gmail.com',
     url='https://github.com/skippyprime/configs',
@@ -25,7 +31,6 @@ setup(
     license='Apache 2.0',
     zip_safe=False,
     install_requires=REQUIREMENTS,
-    setup_requires=['setuptools-markdown', ],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
@@ -42,4 +47,5 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Topic :: Software Development',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        'Topic :: Text Processing :: Markup'])
+        'Topic :: Text Processing :: Markup'],
+    **EXTRA_KWARGS)

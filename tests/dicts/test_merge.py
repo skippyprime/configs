@@ -4,7 +4,7 @@ from assertpy import assert_that
 
 
 def test_merge_duplicate_keys():
-    from configs.dictconfig import DictConfiguration
+    from figtree.dictconfig import DictConfiguration
 
     first = DictConfiguration({
         'one': 1,
@@ -32,7 +32,7 @@ def test_merge_duplicate_keys():
 
 
 def test_merge_unique_keys():
-    from configs.dictconfig import DictConfiguration
+    from figtree.dictconfig import DictConfiguration
 
     first = DictConfiguration({
         'one': 1,
@@ -63,7 +63,7 @@ def test_merge_unique_keys():
 
 
 def test_merge_duplicate_nested_keys():
-    from configs.dictconfig import DictConfiguration
+    from figtree.dictconfig import DictConfiguration
 
     first = DictConfiguration({
         'one': 1,
@@ -120,7 +120,7 @@ def test_merge_duplicate_nested_keys():
 
 
 def test_merge_duplicate_keys_with_different_types():
-    from configs.dictconfig import DictConfiguration
+    from figtree.dictconfig import DictConfiguration
 
     first = DictConfiguration({
         'one': 1,
@@ -170,7 +170,7 @@ def test_merge_duplicate_keys_with_different_types():
 
 @pytest.mark.xfail(raises=ValueError)
 def test_merge_non_mapping():
-    from configs.dictconfig import DictConfiguration
+    from figtree.dictconfig import DictConfiguration
 
     first = DictConfiguration({
         'one': 1,
@@ -181,7 +181,7 @@ def test_merge_non_mapping():
 
 
 def test_make_dict_config():
-    from configs.dictconfig import DictConfiguration
+    from figtree.dictconfig import DictConfiguration
 
     # pylint: disable=W0212
     result = DictConfiguration._make_dict_config(None)
@@ -190,7 +190,7 @@ def test_make_dict_config():
 
 
 def test_maybe_make_dict_config():
-    from configs.dictconfig import DictConfiguration
+    from figtree.dictconfig import DictConfiguration
 
     # pylint: disable=W0212
     result = DictConfiguration._maybe_make_dict_config(None)
@@ -199,7 +199,7 @@ def test_maybe_make_dict_config():
 
 
 def test_make_dict_config_non_recursive():
-    from configs.dictconfig import DictConfiguration
+    from figtree.dictconfig import DictConfiguration
 
     # pylint: disable=W0212
     result = DictConfiguration._make_dict_config({

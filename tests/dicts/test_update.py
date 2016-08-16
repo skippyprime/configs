@@ -4,7 +4,7 @@ from assertpy import assert_that
 
 
 def test_update_with_mapping():
-    from configs.dictconfig import DictConfiguration
+    from figtree.dictconfig import DictConfiguration
 
     conf = DictConfiguration({
         'one': 'a'
@@ -25,7 +25,7 @@ def test_update_with_mapping():
 
 
 def test_update_with_dict():
-    from configs.dictconfig import DictConfiguration
+    from figtree.dictconfig import DictConfiguration
 
     conf = DictConfiguration({
         'one': 'a'
@@ -50,7 +50,7 @@ def test_update_with_dict():
 
 
 def test_update_overwrite_with_mapping():
-    from configs.dictconfig import DictConfiguration
+    from figtree.dictconfig import DictConfiguration
 
     conf = DictConfiguration({
         'one': 'a',
@@ -72,7 +72,7 @@ def test_update_overwrite_with_mapping():
 
 
 def test_delete_key():
-    from configs.dictconfig import DictConfiguration
+    from figtree.dictconfig import DictConfiguration
 
     conf = DictConfiguration({
         'one': 1,
@@ -89,7 +89,7 @@ def test_delete_key():
 
 @pytest.mark.xfail(raises=KeyError)
 def test_delete_on_none():
-    from configs.dictconfig import DictConfiguration
+    from figtree.dictconfig import DictConfiguration
 
     conf = DictConfiguration({
         'one': None
@@ -101,7 +101,7 @@ def test_delete_on_none():
 
 @pytest.mark.xfail(raises=KeyError)
 def test_delete_on_non_mapping():
-    from configs.dictconfig import DictConfiguration
+    from figtree.dictconfig import DictConfiguration
 
     conf = DictConfiguration({
         'one': 'a'
@@ -113,7 +113,7 @@ def test_delete_on_non_mapping():
 
 @pytest.mark.xfail(raises=KeyError)
 def test_delete_on_none_leaf():
-    from configs.dictconfig import DictConfiguration
+    from figtree.dictconfig import DictConfiguration
 
     conf = DictConfiguration({
         'one': None
@@ -125,7 +125,7 @@ def test_delete_on_none_leaf():
 
 @pytest.mark.xfail(raises=KeyError)
 def test_delete_on_non_mapping_leaf():
-    from configs.dictconfig import DictConfiguration
+    from figtree.dictconfig import DictConfiguration
 
     conf = DictConfiguration({
         'one': 'a'

@@ -38,7 +38,7 @@ from .utils import ConfigParams
                          ],
                          indirect=['config_set'])
 def test_load_and_merge_local_file(config_set):
-    from configs import load_config
+    from figtree import load_config
 
     conf = load_config(
         (
@@ -80,7 +80,7 @@ def test_load_and_merge_local_file(config_set):
                          ],
                          indirect=['config_set'])
 def test_load_first_local_file(config_set):
-    from configs import load_first_found_config
+    from figtree import load_first_found_config
 
     conf = load_first_found_config(
         (
@@ -124,7 +124,7 @@ def test_load_first_local_file(config_set):
                          ],
                          indirect=['config_set'])
 def test_load_local_file(config_set):
-    from configs import load_config
+    from figtree import load_config
 
     conf = load_config(config_set.full.source)
 
@@ -155,7 +155,7 @@ def test_load_local_file(config_set):
                                                raises=ValueError),
                          ])
 def test_parse_bool_string(test_input, expected):
-    from configs.parsers import _bool
+    from figtree.parsers import _bool
     assert_that(_bool(test_input)).is_equal_to(expected)
 
 
@@ -173,7 +173,7 @@ def test_parse_bool_string(test_input, expected):
                              (None, None)
                          ])
 def test_parse_value_string(test_input, expected):
-    from configs.parsers import _parse_value
+    from figtree.parsers import _parse_value
     assert_that(_parse_value(test_input)).is_equal_to(expected)
 
 
@@ -192,7 +192,7 @@ def test_parse_value_string(test_input, expected):
                                                raises=ValueError),
                          ])
 def test_hints(test_input):
-    from configs import LiteralConfigSource, FileConfigSource
+    from figtree import LiteralConfigSource, FileConfigSource
 
     assert_that(LiteralConfigSource('ancdef', hint=test_input)).is_not_none()
     assert_that(
@@ -210,7 +210,7 @@ def test_hints(test_input):
                                 raises=ValueError),
                          ])
 def test_no_source_file(test_input):
-    from configs import FileConfigSource
+    from figtree import FileConfigSource
 
     # pylint: disable=W0612
     conf_source = FileConfigSource(test_input)  # NOQA
@@ -226,15 +226,15 @@ def test_no_source_file(test_input):
                                 raises=ValueError),
                          ])
 def test_no_source_literal(test_input):
-    from configs import LiteralConfigSource
+    from figtree import LiteralConfigSource
 
     # pylint: disable=W0612
     conf_source = LiteralConfigSource(test_input)  # NOQA
 
 
 def test_load_empty_source():
-    from configs import load_config
-    from configs.loader import EmptyConfigSource
+    from figtree import load_config
+    from figtree.loader import EmptyConfigSource
 
     conf = load_config(EmptyConfigSource(None))
 
@@ -243,7 +243,7 @@ def test_load_empty_source():
 
 
 def test_load_object_source():
-    from configs import load_config
+    from figtree import load_config
 
     test_data = {'a': 'b'}
 
@@ -253,7 +253,7 @@ def test_load_object_source():
 
 
 def test_load_none_source():
-    from configs import load_config
+    from figtree import load_config
 
     conf = load_config(None)
 
@@ -282,8 +282,8 @@ def test_load_none_source():
                          ],
                          indirect=['config_set'])
 def test_load_remote_http_with_content_type(config_set, encoding):
-    from configs import load_config, FileConfigSource
-    from configs.loader import MIME_TYPE_HINTS
+    from figtree import load_config, FileConfigSource
+    from figtree.loader import MIME_TYPE_HINTS
 
     content_types = collections.defaultdict(list)
     for k, v in six.iteritems(MIME_TYPE_HINTS):
@@ -328,8 +328,8 @@ def test_load_remote_http_with_content_type(config_set, encoding):
                          ],
                          indirect=['config_set'])
 def test_load_remote_http_with_extension(config_set, encoding):
-    from configs import load_config, FileConfigSource
-    from configs.loader import MIME_TYPE_HINTS
+    from figtree import load_config, FileConfigSource
+    from figtree.loader import MIME_TYPE_HINTS
 
     url = 'http://doesnotexist.localdomain/config.{0:s}'.format(encoding)
 
@@ -357,8 +357,8 @@ def test_load_remote_http_with_extension(config_set, encoding):
                          ],
                          indirect=['config_set'])
 def test_load_remote_http_error(config_set, encoding):
-    from configs import load_config, FileConfigSource
-    from configs.loader import MIME_TYPE_HINTS
+    from figtree import load_config, FileConfigSource
+    from figtree.loader import MIME_TYPE_HINTS
 
     url = 'http://doesnotexist.localdomain/config.{0:s}'.format(encoding)
 
