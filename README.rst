@@ -1,6 +1,13 @@
 figtree
 =======
 
+.. image:: https://badge.fury.io/py/figtree.svg
+    :target: https://badge.fury.io/py/figtree
+.. image:: https://travis-ci.org/skippyprime/configs.svg?branch=master
+    :target: https://travis-ci.org/skippyprime/configs
+.. image:: https://coveralls.io/repos/github/skippyprime/configs/badge.svg
+    :target: https://coveralls.io/github/skippyprime/configs
+
 Figtree is a multi-format configuration file loader that normalizes all
 values into dictionaries and supports merging multiple configuration
 files into a single source. The later can be useful if you have multiple

@@ -9,6 +9,7 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install git+https://github.com/skippyprime/assertpy.git@metaclasses
+  - pip install coveralls
   - pip install -r development.txt
   - if [[ $TRAVIS_PYTHON_VERSION == 2.6* ]]; then travis_retry pip install ordereddict; fi
 # command to run tests
