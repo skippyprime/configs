@@ -1,0 +1,9 @@
+*.pyc
+*.egg-info
+
+
+# test files
+.tox
+.cache
+.coverage
+__pycache__
