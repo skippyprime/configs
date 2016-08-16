@@ -5,8 +5,8 @@ figtree
     :target: https://badge.fury.io/py/figtree
 .. image:: https://travis-ci.org/skippyprime/configs.svg?branch=master
     :target: https://travis-ci.org/skippyprime/configs
-.. image:: https://coveralls.io/repos/github/skippyprime/configs/badge.svg
-    :target: https://coveralls.io/github/skippyprime/configs
+.. image:: https://coveralls.io/repos/github/skippyprime/configs/badge.svg?branch=master
+    :target: https://coveralls.io/github/skippyprime/configs?branch=master
 .. image:: https://requires.io/github/skippyprime/configs/requirements.svg?branch=master
      :target: https://requires.io/github/skippyprime/configs/requirements/?branch=master
      :alt: Requirements Status
